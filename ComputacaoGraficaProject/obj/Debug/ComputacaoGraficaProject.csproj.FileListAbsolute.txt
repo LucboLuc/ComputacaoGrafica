@@ -1,0 +1,28 @@
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.exe.config
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.exe
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.pdb
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\MainWindow.g.cs
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\App.g.cs
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject_MarkupCompile.cache
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject_MarkupCompile.lref
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\MainWindow.baml
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.g.resources
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.Properties.Resources.resources
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csproj.GenerateResource.Cache
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.exe
+c:\users\lucas m lima\documents\visual studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.pdb
+C:\Users\Lucas M Lima\Documents\Visual Studio 2015\Projects\ComputacaoGraficaProject\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.exe.config
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.exe
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.pdb
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.exe
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.pdb
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\MainWindow.g.cs
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\App.g.cs
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject_MarkupCompile.cache
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject_MarkupCompile.lref
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\MainWindow.baml
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.g.resources
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.Properties.Resources.resources
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csproj.GenerateResource.Cache
+C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csprojResolveAssemblyReference.cache
