@@ -11,6 +11,7 @@ namespace ComputacaoGraficaProject.Sintese
     {
         private Bitmap imagem;
         private Ponto ponto;
+        private List<List<double[]>> transformacoes = new List<List<double[]>>();
 
         public Transformacoes()
         {
@@ -18,57 +19,56 @@ namespace ComputacaoGraficaProject.Sintese
             imagem = new Bitmap(Referencias.sizeImageX, Referencias.sizeImageY);
         }
 
-        public void method_Translacao(int translacao_X, int translacao_Y)
+        public void method_Translacao(double translacao_X, double translacao_Y)
         {
             // Matriz da translacao
             List<double[]> matrizTranslacao = new List<double[]>();
-            matrizTranslacao.Add(new double[] { translacao_X, translacao_Y });
+            matrizTranslacao.Add(new double[] {1, 0, translacao_X});
+            matrizTranslacao.Add(new double[] { 0, 1, translacao_Y });
+            matrizTranslacao.Add(new double[] { 0, 0, 1 });
 
-            transformar_soma(matrizTranslacao);
+            transformacoes.Add(matrizTranslacao);
         }
 
-        public void method_Escala(int ampliacao)
+        public void method_Escala(double ampliacao)
         {
+            double translacaoX = Referencias.listaRetas[0][0];
+            double translacaoY = Referencias.listaRetas[0][1];
+
+            method_Translacao(translacaoX, translacaoY);
+
             // Matriz do Escala
             List<double[]> matrizEscala = new List<double[]>();
-            matrizEscala.Add(new double[] { ampliacao, 0 });
-            matrizEscala.Add(new double[] { 0, ampliacao });
+            matrizEscala.Add(new double[] { ampliacao, 0, 0});
+            matrizEscala.Add(new double[] { 0, ampliacao, 0});
+            matrizEscala.Add(new double[] { 0, 0, 1});
 
-            // matrizEscala.Add(new double[] { ampliacao, 0, 0 });
-            // matrizEscala.Add(new double[] { 0, ampliacao, 0 });
-            // matrizEscala.Add(new double[] { 0, 0, 1 });
+            transformacoes.Add(matrizEscala);
 
-            transformar_multiplicacao(matrizEscala);
+            method_Translacao(-translacaoX, -translacaoY);
         }
 
-        public void method_Rotacao(int angulo)
+        public void method_Rotacao(double angulo)
         {
-            int translacaoX = Referencias.listaRetas[0][0];
-            int translacaoY = Referencias.listaRetas[0][0];
+            double translacaoX = Referencias.listaRetas[0][0];
+            double translacaoY = Referencias.listaRetas[0][1];
 
-            if (translacaoX == 0 && translacaoY == 0)
-            {
-                double anguloRadianos = Math.PI * angulo / 180;
+            method_Translacao(translacaoX, translacaoY);
 
-                // Matriz do Rotacao
-                List<double[]> matrizRotacao = new List<double[]>();
-                matrizRotacao.Add(new double[] { Math.Cos(anguloRadianos), -Math.Sin(anguloRadianos) });
-                matrizRotacao.Add(new double[] { Math.Sin(anguloRadianos), Math.Cos(anguloRadianos) });
+            double anguloRadianos = Math.PI * angulo / 180;
 
-                transformar_multiplicacao(matrizRotacao);
-            }
-            else
-            {
-                List<int[]> transformacoes = new List<int[]>();
-                transformacoes.Add(new int[] { 1, -translacaoX, -translacaoY });
-                transformacoes.Add(new int[] { 3, angulo });
-                transformacoes.Add(new int[] { 1, translacaoX, translacaoY });
+            // Matriz do Rotacao
+            List<double[]> matrizRotacao = new List<double[]>();
+            matrizRotacao.Add(new double[] { Math.Cos(anguloRadianos), -Math.Sin(anguloRadianos), 0});
+            matrizRotacao.Add(new double[] { Math.Sin(anguloRadianos), Math.Cos(anguloRadianos), 0});
+            matrizRotacao.Add(new double[] { 0, 0, 1 });
 
-                conjuntoDeTransformacoes(transformacoes);
-            }
+            transformacoes.Add(matrizRotacao);
+
+            method_Translacao(-translacaoX, -translacaoY);
         }
 
-        public void method_Reflexao(int tipo)
+        public void method_Reflexao(double tipo)
         {
             // Se tipo = 1, rotaciona em X.
             // Se tipo = 2, rotaciona em Y.
@@ -78,33 +78,42 @@ namespace ComputacaoGraficaProject.Sintese
 
             if (tipo == 1)
             {
-                matrizCisalhamento.Add(new double[] { 1, 0 });
-                matrizCisalhamento.Add(new double[] { 0, -1 });
+                matrizCisalhamento.Add(new double[] { 1, 0, 0 });
+                matrizCisalhamento.Add(new double[] { 0, -1, 0 });
+                matrizCisalhamento.Add(new double[] { 0, 0, 1 });
             }
             else if (tipo == 2)
             {
-                matrizCisalhamento.Add(new double[] { -1, 0 });
-                matrizCisalhamento.Add(new double[] { 0, 1 });
+                matrizCisalhamento.Add(new double[] { -1, 0, 0 });
+                matrizCisalhamento.Add(new double[] { 0, 1, 0 });
+                matrizCisalhamento.Add(new double[] { 0, 0, 1 });
             }
             else if (tipo == 3)
             {
-                matrizCisalhamento.Add(new double[] { -1, 0 });
-                matrizCisalhamento.Add(new double[] { 0, -1 });
+                matrizCisalhamento.Add(new double[] { -1, 0, 0 });
+                matrizCisalhamento.Add(new double[] { 0, -1, 0 });
+                matrizCisalhamento.Add(new double[] { 0, 0, 1 });
             }
 
-            transformar_multiplicacao(matrizCisalhamento);
+            transformacoes.Add(matrizCisalhamento);
         }
 
-        public void method_Cisalhamento(int cisalhamento_X, int cisalhamento_Y)
+        public void method_Cisalhamento(double cisalhamento_X, double cisalhamento_Y)
         {
-            Console.WriteLine("X = " + cisalhamento_X);
-            Console.WriteLine("Y = " + cisalhamento_Y);
+            double translacaoX = Referencias.listaRetas[0][0];
+            double translacaoY = Referencias.listaRetas[0][1];
+
+            method_Translacao(translacaoX, translacaoY);
+
             // Matriz do cisalhamento
             List<double[]> matrizCisalhamento = new List<double[]>();
-            matrizCisalhamento.Add(new double[] { 1+(cisalhamento_X*cisalhamento_Y), cisalhamento_X });
-            matrizCisalhamento.Add(new double[] { cisalhamento_Y, 1 });
+            matrizCisalhamento.Add(new double[] { 1+(cisalhamento_X*cisalhamento_Y), cisalhamento_X, 0 });
+            matrizCisalhamento.Add(new double[] { cisalhamento_Y, 1, 0 });
+            matrizCisalhamento.Add(new double[] { 0, 0, 1 });
 
-            transformar_multiplicacao(matrizCisalhamento);
+            transformacoes.Add(matrizCisalhamento);
+
+            method_Translacao(-translacaoX, -translacaoY);
         }
 
         /* Transformação do tipo multiplicação. */
@@ -112,13 +121,13 @@ namespace ComputacaoGraficaProject.Sintese
         {
             // Calcular a multiplicação de matrizes. //
 
-            List<int[]> matrizGerada = new List<int[]>();
+            List<double[]> matrizGerada = new List<double[]>();
 
             for (int i = 0; i < Referencias.listaRetas.Count; i++)
             {
-                int coordenada_X = (int)((matrizTransformacao[0][0] * Referencias.listaRetas[i][0]) + (matrizTransformacao[0][1] * Referencias.listaRetas[i][1]));
-                int coordenada_Y = (int)((matrizTransformacao[1][0] * Referencias.listaRetas[i][0]) + (matrizTransformacao[1][1] * Referencias.listaRetas[i][1]));
-                int[] coordenadas = new int[] { coordenada_X, coordenada_Y };
+                double coordenada_X = (int)((matrizTransformacao[0][0] * Referencias.listaRetas[i][0]) + (matrizTransformacao[0][1] * Referencias.listaRetas[i][1]) + (matrizTransformacao[0][2] * 1));
+                double coordenada_Y = (int)((matrizTransformacao[1][0] * Referencias.listaRetas[i][0]) + (matrizTransformacao[1][1] * Referencias.listaRetas[i][1]) + (matrizTransformacao[1][2] * 1));
+                double[] coordenadas = new double[] { coordenada_X, coordenada_Y };
                 matrizGerada.Add(coordenadas);
             }
 
@@ -128,21 +137,57 @@ namespace ComputacaoGraficaProject.Sintese
         /* Transformação do tipo soma. */
         private void transformar_soma(List<double[]> matrizTransformacao)
         {
-            List<int[]> matrizGerada = new List<int[]>();
+            List<double[]> matrizGerada = new List<double[]>();
 
             for (int i = 0; i < Referencias.listaRetas.Count; i++)
             {
                 int coordenada_X = (int)(Referencias.listaRetas[i][0] + matrizTransformacao[0][0]);
                 int coordenada_Y = (int)(Referencias.listaRetas[i][1] + matrizTransformacao[0][1]);
-                int[] coordenadas = new int[] { coordenada_X, coordenada_Y };
+                double[] coordenadas = new double[] { coordenada_X, coordenada_Y };
                 matrizGerada.Add(coordenadas);
             }
 
             Referencias.listaRetas = matrizGerada;
         }
         
+        private List<double[]> calcular_matriz_composta()
+        {
+            while(transformacoes.Count > 1)
+            {
+                List<double[]> matrizResulParcial = new List<double[]>();
+
+                for (int i = 0; i < transformacoes[0].Count; i++)
+                {
+                    double posicao1 = 0, posicao2 = 0, posicao3 = 0;
+                    for (int j = 0; j < transformacoes[0].Count; j++)
+                    {
+                        posicao1 = posicao1 + (transformacoes[0][i][j] * transformacoes[1][j][0]);
+                        posicao2 = posicao2 + (transformacoes[0][i][j] * transformacoes[1][j][1]);                       
+                        posicao3 = posicao3 + (transformacoes[0][i][j] * transformacoes[1][j][2]);
+                    }
+                    matrizResulParcial.Add(new double[]{ posicao1,posicao2,posicao3});
+                }
+                transformacoes.RemoveAt(0);
+                transformacoes.RemoveAt(0);
+                transformacoes.Insert(0, matrizResulParcial);
+            }
+            return transformacoes[0];
+        }
+
+        private void imprimirMatriz(List<double[]> matriz)
+        {
+            for(int i = 0; i < matriz.Count; i++)
+            {
+                for(int j = 0; j < matriz.Count; j++)
+                {
+                    Console.WriteLine(matriz[i][j] + "   ");
+                }
+                Console.WriteLine("a");
+            }
+        }
+
         /* Percorre o conjunto de transformações e realiza todas em sequênca. */
-        public void conjuntoDeTransformacoes(List<int[]> transformacoes)
+        public void conjuntoDeTransformacoes(List<double[]> transformacoes)
         {
             // Explicação:
             // O array de números inteiros indica:
@@ -172,6 +217,9 @@ namespace ComputacaoGraficaProject.Sintese
                     method_Cisalhamento(transformacoes[i][1], transformacoes[i][2]);
                 }
             }
+
+            transformar_multiplicacao(calcular_matriz_composta());
+            transformacoes.Clear();
 
             atualizarInterface();
         }

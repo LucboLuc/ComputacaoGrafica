@@ -57,10 +57,10 @@ namespace ComputacaoGraficaProject
             raioCircunferencia.Text = "";
 
             listViewRetas.Items.Clear();
-            listaRetas = new List<int[]>();
+            listaRetas = new List<double[]>();
 
             listViewTransformacoes.Items.Clear();
-            listaTransformacoes = new List<int[]>();
+            listaTransformacoes = new List<double[]>();
         }
         
         private Boolean validacaoCamposCircunferencia()
@@ -105,11 +105,11 @@ namespace ComputacaoGraficaProject
             apagarCamposSintese();
 
             /* Teste - Cria um quadrado */
-            Referencias.listaRetas.Add(new int[] { 0, 0 });
-            Referencias.listaRetas.Add(new int[] { 0, 100 });
-            Referencias.listaRetas.Add(new int[] { 100, 100 });
-            Referencias.listaRetas.Add(new int[] { 100, 0 });
-            Referencias.listaRetas.Add(new int[] { 0, 0 });
+            Referencias.listaRetas.Add(new double[] { 0, 0 });
+            Referencias.listaRetas.Add(new double[] { 0, 100 });
+            Referencias.listaRetas.Add(new double[] { 100, 100 });
+            Referencias.listaRetas.Add(new double[] { 100, 0 });
+            Referencias.listaRetas.Add(new double[] { 0, 0 });
             Retas retas = new Retas();
             retas.desenharRetas_PontoMedio(Referencias.listaRetas);
         }
@@ -215,13 +215,13 @@ namespace ComputacaoGraficaProject
             return true;
         }
         
-        private List<int[]> listaRetas = new List<int[]>();
+        private List<double[]> listaRetas = new List<double[]>();
 
         private void adicionarCoordenadaReta_Click(object sender, RoutedEventArgs e)
         {
             if (validacaoImagem() && validacaoCamposReta())
             {
-                int[] coordenadas = new int[] { int.Parse(X_Reta.Text), int.Parse(Y_Reta.Text) };
+                double[] coordenadas = new double[] { Double.Parse(X_Reta.Text), Double.Parse(Y_Reta.Text) };
                 listaRetas.Add(coordenadas);
 
                 listViewRetas.Items.Add(new Functions.ObjectReta { X = X_Reta.Text, Y = Y_Reta.Text });
@@ -232,7 +232,7 @@ namespace ComputacaoGraficaProject
         /* ------------------- FINAL: PARTE DE DESENHO DA RETA ------------------------------- */
         /* ------------------- INÍCIO: PARTE DE TRANSFORMAÇÕES ------------------------------- */
 
-        private List<int[]> listaTransformacoes = new List<int[]>();
+        private List<double[]> listaTransformacoes = new List<double[]>();
 
         private void transformar_Click(object sender, RoutedEventArgs e)
         {
@@ -243,7 +243,7 @@ namespace ComputacaoGraficaProject
             }
 
             listViewTransformacoes.Items.Clear();
-            listaTransformacoes = new List<int[]>();
+            listaTransformacoes = new List<double[]>();
         }
 
         // Evento que envia para a classe de transformação, o tipo de transformação escolhida pelo usuário.
@@ -251,45 +251,45 @@ namespace ComputacaoGraficaProject
         {
             Button button = sender as Button;
 
-            int[] info = null;
+            double[] info = null;
 
             if (button == tTransladar)
             {
-                info = new int[] { 1, int.Parse(X_Translacao.Text), int.Parse(Y_Translacao.Text) };
-                listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Transladar("+ int.Parse(X_Translacao.Text)  + ", "+ int.Parse(Y_Translacao.Text) + ")" });
+                info = new double[] { 1, Double.Parse(X_Translacao.Text), Double.Parse(Y_Translacao.Text) };
+                listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Transladar("+ Double.Parse(X_Translacao.Text)  + ", "+ Double.Parse(Y_Translacao.Text) + ")" });
             }
             else if (button == tEscalonar)
             {
-                info = new int[] { 2, int.Parse(ampliacaoEscala.Text) };
+                info = new double[] { 2, Double.Parse(ampliacaoEscala.Text) };
                 listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Escalonar(" + ampliacaoEscala.Text + ")" });
             }
             else if (button == tRotacionar)
             {
-                info = new int[] { 3, int.Parse(anguloRotacao.Text) };
+                info = new double[] { 3, Double.Parse(anguloRotacao.Text) };
                 listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Rotacionar(" + anguloRotacao.Text + ")" });
             }
             else if (button == tRefletir_1)
             {
-                info = new int[] { 4, 1 };
+                info = new double[] { 4, 1 };
                 listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Refletir em X" });
             }
             else if (button == tRefletir_2)
             {
-                info = new int[] { 4, 2 };
+                info = new double[] { 4, 2 };
                 listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Refletir em Y" });
             }
             else if (button == tRefletir_3)
             {
-                info = new int[] { 4, 3 };
+                info = new double[] { 4, 3 };
                 listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Refletir em X e Y" });
             }
             else if (button == tCisalhar)
             {
-                info = new int[] { 5, int.Parse(X_Cisalhamento.Text), int.Parse(Y_Cisalhamento.Text) };
+                info = new double[] { 5, Double.Parse(X_Cisalhamento.Text), Double.Parse(Y_Cisalhamento.Text) };
                 listViewTransformacoes.Items.Add(new Functions.ObjectTransformacao { Transformacao = "Cisalhar(" + X_Cisalhamento.Text + ", " + Y_Cisalhamento.Text + ")" });
             }
 
-            listaTransformacoes.Add(info);
+            listaTransformacoes.Insert(0,info);
         }
 
         /* ------------------- FINAL: PARTE DE TRANSFORMAÇÕES ------------------------------- */

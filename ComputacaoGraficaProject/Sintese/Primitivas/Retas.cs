@@ -19,7 +19,7 @@ namespace ComputacaoGraficaProject.Sintese.Primitivas
             imagem = new Bitmap(Referencias.sizeImageX, Referencias.sizeImageY);
         }
 
-        public void desenharRetas_DDA(List<int[]> retas)
+        public void desenharRetas_DDA(List<double[]> retas)
         {
             if (retas.Count == 1)
             {
@@ -36,7 +36,7 @@ namespace ComputacaoGraficaProject.Sintese.Primitivas
             Referencias.functions.atualizarImagem(imagem);
         }
 
-        public void desenharRetas_PontoMedio(List<int[]> retas)
+        public void desenharRetas_PontoMedio(List<double[]> retas)
         {
             if (retas.Count == 1)
             {
@@ -65,13 +65,13 @@ namespace ComputacaoGraficaProject.Sintese.Primitivas
          * While: plotarPixel (Xn, Yn)
          */
 
-        private void methodDDA(int[] P1, int[] P2)
+        private void methodDDA(double[] P1, double[] P2)
         {
-            int x1 = P1[0], x2 = P2[0];
-            int y1 = P1[1], y2 = P2[1];
+            double x1 = P1[0], x2 = P2[0];
+            double y1 = P1[1], y2 = P2[1];
 
-            int length;
-            float x, y, xInc, yInc;
+            double length;
+            double x, y, xInc, yInc;
 
             length = Math.Abs(x2 - x1);
             if (Math.Abs(y2 - y1) > length)
@@ -102,12 +102,12 @@ namespace ComputacaoGraficaProject.Sintese.Primitivas
             }
         }
 
-        private void methodPontoMedio(int[] P1, int[] P2)
+        private void methodPontoMedio(double[] P1, double[] P2)
         {
-            int x1 = P1[0], x2 = P2[0];
-            int y1 = P1[1], y2 = P2[1];
+            double x1 = P1[0], x2 = P2[0];
+            double y1 = P1[1], y2 = P2[1];
 
-            int dx, dy, incE, incNE, d, x, y;
+            double dx, dy, incE, incNE, d, x, y;
 
             dx = Math.Abs(x2 - x1);
             dy = Math.Abs(y2 - y1);

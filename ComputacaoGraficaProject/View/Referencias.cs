@@ -23,9 +23,9 @@ namespace ComputacaoGraficaProject.View
         public static int sizeImageY;
 
         public static ListView listViewRetas;
-        public static List<int[]> listaRetas;
+        public static List<double[]> listaRetas;
 
         public static ListView listViewTransformacoes;
-        public static List<int[]> listaTransformacoes;
+        public static List<double[]> listaTransformacoes;
     }
 }

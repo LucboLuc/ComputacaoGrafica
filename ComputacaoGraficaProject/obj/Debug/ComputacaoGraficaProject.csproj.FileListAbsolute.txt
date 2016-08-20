@@ -26,3 +26,17 @@ C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGraf
 C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.Properties.Resources.resources
 C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csproj.GenerateResource.Cache
 C:\Users\Lucas Barbosa\Documents\ComputacaoGrafica_Sintese-master\ComputacaoGrafica_Sintese-master\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.exe.config
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.exe
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.pdb
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.exe
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\bin\Debug\ComputacaoGraficaProject.pdb
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\MainWindow.g.cs
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\App.g.cs
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject_MarkupCompile.cache
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject_MarkupCompile.lref
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\MainWindow.baml
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.g.resources
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.Properties.Resources.resources
+C:\Users\Lucas Barbosa\Documents\GitHub\ComputacaoGrafica\ComputacaoGraficaProject\obj\Debug\ComputacaoGraficaProject.csproj.GenerateResource.Cache

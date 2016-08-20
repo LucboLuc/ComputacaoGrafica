@@ -46,14 +46,14 @@ namespace ComputacaoGraficaProject.Sintese
             return y - (tamanhoImagemY / 2);
         }
 
-        public int X_MundoParaDispositivo(int x)
+        public int X_MundoParaDispositivo(double x)
         {
-            return x + (tamanhoImagemX / 2);
+            return (int)(x + (tamanhoImagemX / 2));
         }
 
-        public int Y_MundoParaDispositivo(int y)
+        public int Y_MundoParaDispositivo(double y)
         {
-            return tamanhoImagemY - (y + (tamanhoImagemY / 2));
+            return (int)(tamanhoImagemY - (y + (tamanhoImagemY / 2)));
         }
 
         public double NormalizacaoX(int x)
@@ -68,17 +68,19 @@ namespace ComputacaoGraficaProject.Sintese
 
         private Bitmap imagem;
 
-        public void plotarPixel(int X, int Y, Color corDoPixel, Bitmap imagem)
+        public void plotarPixel(double X, double Y, Color corDoPixel, Bitmap imagem)
         {
             this.imagem = imagem;
 
             int X_Dispositivo = X_MundoParaDispositivo(X);
             int Y_Dispositivo = Y_MundoParaDispositivo(Y);
 
-           // Console.Write("X = " + X_Dispositivo + " Y = " + Y_Dispositivo);
-           // Console.WriteLine("");
+            //Console.WriteLine(" X = " + X + " Y = " + Y);
+            //Console.WriteLine(" X = " + X_Dispositivo + " Y = " + Y_Dispositivo);
+            //Console.WriteLine("");
 
             imagem.SetPixel(X_Dispositivo, Y_Dispositivo, corDoPixel);
+
         }
 
         public Bitmap getImage()
